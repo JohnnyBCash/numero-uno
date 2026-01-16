@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Power Law</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bitcoin Power Law</h1>
+            <p class="subtitle">Analyzing Bitcoin's price trajectory through power law regression</p>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-label">Current Price</div>
+                <div class="stat-value" id="currentPrice">Loading...</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">R² Accuracy</div>
+                <div class="stat-value" id="r2Value">Calculating...</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Slope (β)</div>
+                <div class="stat-value" id="slopeValue">Calculating...</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Days Since Genesis</div>
+                <div class="stat-value" id="daysSinceGenesis">-</div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="powerLawChart"></canvas>
+        </div>
+
+        <div class="info-section">
+            <h2>About Bitcoin Power Law</h2>
+            <p>
+                The Bitcoin Power Law model suggests that Bitcoin's price follows a power law relationship 
+                with time since its genesis block (January 3, 2009). This model has shown remarkable accuracy 
+                in tracking Bitcoin's long-term price trajectory.
+            </p>
+            <p>
+                The power law equation: <strong>Price = a × Days^β</strong>
+            </p>
+            <p>
+                Where β (beta) represents the slope of the trend on a logarithmic scale, and R² measures 
+                how well the model fits historical data.
+            </p>
+        </div>
+
+        <footer>
+            <p>Data sourced from <a href="https://www.coingecko.com" target="_blank">CoinGecko API</a></p>
+            <p>Genesis Block: January 3, 2009</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "bitcoin-power-law",
+  "version": "1.0.0",
+  "description": "Bitcoin Power Law visualization website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "bitcoin",
+    "power-law",
+    "cryptocurrency",
+    "visualization",
+    "chart"
+  ],
+  "author": "johnny-cash",
+  "license": "MIT"
+}
