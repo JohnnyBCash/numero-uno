@@ -1,65 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Power Law</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metzomania — Stop je bedrijf te doden door niet te automatiseren</title>
+  <meta name="description" content="Metzomania verbindt de systemen die je al gebruikt zodat jij stopt met de bottleneck te zijn in je eigen bedrijf. Gratis lever call: 3 automation ideeën gegarandeerd.">
+  <link rel="canonical" href="https://metzomania.nl">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Metzomania — The cost is once. The leverage is forever.">
+  <meta property="og:description" content="Gratis lever call: 30 minuten, 3 gegarandeerde automation ideeën voor jouw bedrijf.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metzomania.nl">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Bitcoin Power Law</h1>
-            <p class="subtitle">Analyzing Bitcoin's price trajectory through power law regression</p>
-        </header>
 
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-label">Current Price</div>
-                <div class="stat-value" id="currentPrice">Loading...</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">R² Accuracy</div>
-                <div class="stat-value" id="r2Value">Calculating...</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Slope (β)</div>
-                <div class="stat-value" id="slopeValue">Calculating...</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">Days Since Genesis</div>
-                <div class="stat-value" id="daysSinceGenesis">-</div>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <canvas id="powerLawChart"></canvas>
-        </div>
-
-        <div class="info-section">
-            <h2>About Bitcoin Power Law</h2>
-            <p>
-                The Bitcoin Power Law model suggests that Bitcoin's price follows a power law relationship 
-                with time since its genesis block (January 3, 2009). This model has shown remarkable accuracy 
-                in tracking Bitcoin's long-term price trajectory.
-            </p>
-            <p>
-                The power law equation: <strong>Price = a × Days^β</strong>
-            </p>
-            <p>
-                Where β (beta) represents the slope of the trend on a logarithmic scale, and R² measures 
-                how well the model fits historical data.
-            </p>
-        </div>
-
-        <footer>
-            <p>Data sourced from <a href="https://www.coingecko.com" target="_blank">CoinGecko API</a></p>
-            <p>Genesis Block: January 3, 2009</p>
-        </footer>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">Metzomania</span>
+      <a href="#book" class="btn btn--nav">Boek je lever call</a>
     </div>
+  </nav>
 
-    <script src="script.js"></script>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="inner">
+      <span class="label">Metzomania</span>
+      <h1>Je <span class="accent">doodt</span> je eigen bedrijf door niet te automatiseren.</h1>
+      <p class="hero-sub">Elk uur dat je besteedt aan taken die een systeem zou moeten doen, is een uur dat je nooit terugkrijgt. Metzomania vindt de leverage in jouw bedrijf en trekt eraan. Eén keer. Zodat het voor altijd werkt.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn btn--large">Boek je gratis lever call</a>
+        <p class="cta-note">Gegarandeerd: 3 automation ideeën die je direct kunt toepassen. Max 4 calls per maand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section class="pain">
+    <div class="inner">
+      <h2>Herken je dit?</h2>
+      <ul class="arrow-list">
+        <li>Je <strong>stuurt facturen handmatig</strong> die zichzelf kunnen versturen</li>
+        <li>Je <strong>copy-past klantdata</strong> tussen drie verschillende platforms</li>
+        <li>Je hebt een spreadsheet die <strong>alleen jij begrijpt</strong> — en je bent bang dat die breekt</li>
+        <li>Je zegt <strong>"ik doe het zelf wel even"</strong> — al twee jaar lang</li>
+        <li>Je hebt software die <strong>niet praat met je andere software</strong></li>
+        <li>Je avonden gaan op aan <strong>admin in plaats van groei</strong></li>
+      </ul>
+      <p class="pain-close">Elk van deze taken is een lever die je niet gebruikt.</p>
+    </div>
+  </section>
+
+  <!-- TUESDAY -->
+  <section class="tuesday">
+    <div class="inner">
+      <h2>Dit is jouw dinsdag.</h2>
+      <div class="tuesday-log">
+        <div class="log-entry">
+          <span class="log-time">07:45</span>
+          <span class="log-text">Je opent je laptop. 14 emails. Drie ervan zijn dingen die een systeem had moeten afhandelen.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">08:30</span>
+          <span class="log-text">Een klant heeft betaald maar heeft geen toegang. Je zoekt in Mollie, dan WooCommerce, dan het cursusplatform. Handmatig opgelost. Twintig minuten weg.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">10:00</span>
+          <span class="log-text">Je boekhouder appt: "Ik mis nog drie facturen." Je opent Moneybird. Copy-paste. Copy-paste. Copy-paste.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">11:15</span>
+          <span class="log-text">Iemand in je team vraagt waar de laatste klantenlijst staat. Die staat in een Google Sheet die alleen jij bijhoudt. Je werkt hem bij.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">14:00</span>
+          <span class="log-text">Je begint eindelijk aan het werk dat echt geld oplevert.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">16:30</span>
+          <span class="log-text">Je stopt om nog twee bestellingen handmatig te verwerken.</span>
+        </div>
+        <div class="log-entry">
+          <span class="log-time">18:00</span>
+          <span class="log-text">Je klapt je laptop dicht. Druk geweest. Maar niet productief.</span>
+        </div>
+      </div>
+      <p class="tuesday-close">Elke taak op deze lijst kan worden geautomatiseerd. Niet in theorie. <strong>Vandaag.</strong></p>
+    </div>
+  </section>
+
+  <!-- LEVER -->
+  <section class="lever">
+    <div class="inner">
+      <h2>The cost is once.<br>The leverage is forever.</h2>
+      <p>De meeste ondernemers denken dat automatisering ingewikkeld, duur en alleen voor grote bedrijven is. Dat klopt niet. Het gaat erom dat de tools die je al gebruikt samenwerken — zodat zij het repetitieve werk doen in plaats van jij.</p>
+      <p>Eén integratie. Eén keer gebouwd. Draait elke dag, elke week, elk jaar. Zonder jou. Zonder je team. Zonder dat iemand er ooit nog aan hoeft te denken.</p>
+      <blockquote class="lever-quote">
+        Een 1-dag build die je 5 uur per week bespaart = <strong>260 uur per jaar.</strong><br>
+        Bij €50/uur is dat <strong>€13.000 aan waarde.</strong> Elk jaar. Van één dag werk.<br>
+        Jaar twee: €26.000. Jaar drie: €39.000.<br><br>
+        <em>The cost is once. The leverage is forever.</em>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- OBJECTION -->
+  <section class="objection">
+    <div class="inner">
+      <h2>"Ik heb geen tijd om<br>iemand in te werken."</h2>
+      <p class="objection-answer">Goed. Hoeft ook niet.</p>
+      <p>Dit is geen half jaar IT-traject met een requirementsdocument, een projectmanager en wekelijkse standups waar niets gebeurt. Dit is één telefoongesprek.</p>
+      <p>Jij praat. Ik luister. Jij beschrijft je dinsdag. Ik hoor de vijf dingen die geautomatiseerd moeten worden. Dan bouw ik ze.</p>
+      <p>Geen handleiding nodig. Geen inwerkperiode. Geen "geef me toegang tot je systemen en ik kom over drie weken terug." Ik werk snel omdat de leverage meestal voor de hand ligt — jij ziet het alleen niet meer omdat je er al twee jaar tegenaan kijkt.</p>
+    </div>
+  </section>
+
+  <!-- WHAT I BUILD -->
+  <section class="build">
+    <div class="inner">
+      <h2>Wat ik bouw.</h2>
+      <p>Ik verbind de systemen die Nederlandse bedrijven daadwerkelijk gebruiken:</p>
+      <div class="integrations">
+        <div class="integration-row">
+          <div class="integration-chain">
+            <span class="tool">Mollie</span>
+            <span class="arrow">→</span>
+            <span class="tool">WooCommerce</span>
+            <span class="arrow">→</span>
+            <span class="tool">Moneybird</span>
+          </div>
+          <p>Klant betaalt, factuur verstuurt zichzelf, boekhouding klaar.</p>
+        </div>
+        <div class="integration-row">
+          <div class="integration-chain">
+            <span class="tool">WooCommerce</span>
+            <span class="arrow">→</span>
+            <span class="tool">Teachable</span>
+          </div>
+          <p>Klant koopt een cursus, toegangscode genereert automatisch, niemand hoeft er iets aan te doen.</p>
+        </div>
+        <div class="integration-row">
+          <div class="integration-chain">
+            <span class="tool">Exact Online</span>
+            <span class="arrow">→</span>
+            <span class="tool">CRM</span>
+            <span class="arrow">→</span>
+            <span class="tool">Email tool</span>
+          </div>
+          <p>Nieuwe lead binnenkomt, data stroomt door, follow-up verstuurt automatisch.</p>
+        </div>
+        <div class="integration-row">
+          <div class="integration-chain">
+            <span class="tool">Calendly</span>
+            <span class="arrow">→</span>
+            <span class="tool">Google Workspace</span>
+            <span class="arrow">→</span>
+            <span class="tool">Moneybird</span>
+          </div>
+          <p>Klant boekt, contract genereert, factuur plant zichzelf in.</p>
+        </div>
+      </div>
+      <p class="integration-close">Jouw tools zijn niet het probleem. De gaps ertussen wel. <strong>Ik sluit de gaps. Permanent.</strong></p>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="cases">
+    <div class="inner inner--wide">
+      <span class="label">Case studies</span>
+      <h2>Gebouwd. Nooit meer aangeraakt. Draait nog steeds.</h2>
+      <div class="case-grid">
+        <div class="case-card">
+          <h3>Het educatiebedrijf dat stopte met admin.</h3>
+          <p>Een online educatiebedrijf verkocht cursussen aan Nederlandse klanten — maar het cursusplatform accepteerde geen iDEAL. Elke verkoop was een handmatige keten: betaling checken, code genereren, klant emailen, factuur aanmaken, spreadsheet bijwerken. Vijf stappen. Elke klant.</p>
+          <p>Eén systeem gebouwd. WooCommerce verwerkt Nederlandse betalingen. Unieke toegangscodes genereren automatisch. MoneyBird verstuurt de factuur. De spreadsheet werkt zichzelf bij.</p>
+          <div class="case-result">6+ uur per week bespaard. Draait 3 jaar. Nul updates. Nul onderhoud. Nul problemen.</div>
+          <blockquote class="case-quote">"We hebben het gebouwd en er letterlijk nooit meer naar gekeken."</blockquote>
+        </div>
+        <div class="case-card">
+          <h3>Het bureau dat zijn zaterdagen terugkreeg.</h3>
+          <p>Een creatief bureau met 8 mensen besteedde elke vrijdagmiddag aan facturatie en tijdregistratie. Drie tools, geen van alle verbonden, allemaal handmatige invoer vereist. De eigenaar bracht zaterdagochtenden door met inhalen wat was blijven liggen.</p>
+          <p>Eén week werk. Tijdregistratie stroomt naar projectmanagement, naar facturatie, naar Exact. Vrijdagmiddag vrij. Zaterdagochtend vrij.</p>
+          <div class="case-result">8 uur per week bespaard voor het hele team. De eigenaar neemt nu vrij op zaterdag.</div>
+          <blockquote class="case-quote">"Ik was vergeten hoe het voelde om niet aan admin te denken in het weekend."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIERS -->
+  <section class="tiers">
+    <div class="inner inner--wide">
+      <h2>Vier manieren omhoog.</h2>
+      <p class="tiers-sub">Zelfde bestemming: een bedrijf dat draait zonder dat jij er middenin staat.</p>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-icon">&#x1FA9C;</div>
+          <div class="tier-name">Staircase</div>
+          <div class="tier-title">The Lever Call</div>
+          <div class="tier-time">30 minuten · Zoom</div>
+          <p class="tier-desc">Je vertelt hoe je bedrijf werkt. Ik laat je precies zien waar je tijd verliest — en geef je 3 concrete automation ideeën die je direct kunt toepassen. Niet theorie. Specifieke stappen.</p>
+          <div class="tier-bottom">
+            <div class="tier-price">Gratis</div>
+            <div class="tier-note">Max 4 per maand</div>
+            <div class="tier-guarantee">Gegarandeerd: 3 ideeën of ik Tikkie je een koffie.</div>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">&#x2B06;&#xFE0F;</div>
+          <div class="tier-name">Escalator</div>
+          <div class="tier-title">The One-Day Build</div>
+          <div class="tier-time">1 volledige dag</div>
+          <p class="tier-desc">Ik pak de grootste tijdverspiller uit je lever call en bouw de automation. Om 17:00 draait iets wat elke week uren van je tijd kostte nu op autopilot. Je wordt de volgende ochtend wakker en het probleem is gewoon... weg.</p>
+          <div class="tier-bottom">
+            <div class="tier-price">€1.200</div>
+            <div class="tier-note">Eén automation. Draait voor altijd.</div>
+          </div>
+        </div>
+        <div class="tier-card tier-card--featured">
+          <div class="tier-featured-label">Meest gekozen</div>
+          <div class="tier-icon">&#x1F6D7;</div>
+          <div class="tier-name">Elevator</div>
+          <div class="tier-title">The Deep Dive</div>
+          <div class="tier-time">1 week</div>
+          <p class="tier-desc">Meerdere integraties, verbonden systemen, volledige workflow redesign. Ik breng je volledige operatie in kaart en herbouw de onderdelen die je tijd kosten. Op vrijdag werkt je bedrijf anders dan op maandag. Je team merkt het.</p>
+          <div class="tier-bottom">
+            <div class="tier-price">€5.000</div>
+            <div class="tier-note">Jouw systemen praten eindelijk met elkaar.</div>
+          </div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-icon">&#x1F680;</div>
+          <div class="tier-name">Rocket Ship</div>
+          <div class="tier-title">The Embedded Month</div>
+          <div class="tier-time">1 maand · volledige immersie</div>
+          <p class="tier-desc">Ik zit een volledige maand in je bedrijf. Niet als freelancer — als tijdelijke CTO. Elk proces, elke tool, elke workflow wordt bekeken door één lens: automatiseren, integreren of elimineren. AI-tools, custom builds, workflow redesign — alles staat op tafel. Na deze maand run je een ander bedrijf.</p>
+          <div class="tier-bottom">
+            <div class="tier-price">€20.000</div>
+            <div class="tier-note">De meest winstgevende maand die je bedrijf ooit heeft.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why">
+    <div class="inner">
+      <h2>Waarom Metzomania?</h2>
+      <ul class="arrow-list">
+        <li><strong>15 jaar systemen verbinden</strong> die nooit bedoeld waren om samen te werken. Ze werken zo goed dat niemand er ooit nog aan hoeft te denken.</li>
+        <li>Ik ken het <strong>Nederlandse softwarelandschap</strong> — Mollie, Moneybird, Exact, Lightspeed, WooCommerce, jouw obscure branchespecifieke tool waar niemand van heeft gehoord. Ik heb ze allemaal verbonden.</li>
+        <li>Ik bouw geen <strong>fragiele automations die breken</strong> als er iets verandert. Ik bouw systemen die jaren draaien zonder onderhoud. Vraag mijn klanten.</li>
+        <li>Ik verkoop geen uren. <strong>Ik verkoop leverage.</strong> Jij betaalt één keer. Je profiteert voor altijd. Mijn incentive is om iets te bouwen zo goed dat je me nooit meer hoeft te bellen.</li>
+      </ul>
+      <p class="why-close">Je belt wel terug. Maar omdat je meer leverage wilt, niet omdat iets kapot is.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="book">
+    <div class="inner">
+      <h2>Stop de bottleneck te zijn<br>in je eigen bedrijf.</h2>
+      <p>Eén call. 30 minuten. 3 ideeën. 4 plekken per maand.</p>
+      <!-- Replace CALENDLY_LINK with actual booking URL -->
+      <a href="CALENDLY_LINK" class="btn btn--large">Boek je gratis lever call →</a>
+      <p class="final-note">Als ik geen 3 manieren kan vinden om jou tijd te besparen, Tikkie ik je een koffie. Deal?</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Metzomania</p>
+    <p>The cost is once. The leverage is forever.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
