@@ -6,7 +6,8 @@ art. 5 aanhef en onder b ("richtingbezwaar").
 
 ## Contents
 
-- [`FINDINGS.md`](FINDINGS.md) — **report**: legal framework, maximum punishment, the art. 5(b) test, acquittal-vs-conviction patterns, and sentences in practice.
+- [`BEVINDINGEN.md`](BEVINDINGEN.md) — **rapport (NL)**: juridisch kader, maximumstraf, de toets bij art. 5 onder b, vrijspraak-vs-veroordeling, straffen in de praktijk, plus: bleven de kinderen van school? en recidive/herhaalde vervolging?
+- [`FINDINGS.md`](FINDINGS.md) — **report (EN)**: legal framework, maximum punishment, the art. 5(b) test, acquittal-vs-conviction patterns, and sentences in practice.
 - [`index.md`](index.md) — summary index: core arresten + related cases, sorted by date.
 - [`cases/`](cases/) — one Markdown file per ECLI (metadata + inhoudsindicatie + full text).
 - [`manifest.json`](manifest.json) — machine-readable metadata for every case (no body).
